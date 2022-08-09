@@ -76,8 +76,10 @@ function findAll(n, k) {
         let suma = array[0];
         for (let i = 1; i < array.length; i++) {
             if (array[i] < array[i - 1]) {
+                console.log(min)
                 fl = false;
                 break;
+
             } else {
                 suma += array[i]
             }
@@ -100,8 +102,8 @@ function findAll(n, k) {
 }
 
 
-console.log(findAll(10, 3), [8, '118', '334']);
-console.log(findAll(27, 3), [1, '999', '999']);
-console.log(findAll(84, 4), []);
+// console.log(findAll(10, 3), [8, '118', '334']);
+// console.log(findAll(27, 3), [1, '999', '999']);
+// console.log(findAll(84, 4), []);
 console.log(findAll(35, 6), [123, '116999', '566666'])
 console.log(findAll(6, 6), [1, '111111', '111111'])
