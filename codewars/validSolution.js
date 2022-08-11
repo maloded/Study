@@ -1,37 +1,47 @@
 // https://www.codewars.com/kata/529bf0e9bdf7657179000008 4kyu
 
 function validSolution(board) {
+    const sqrt = Math.sqrt(board.length);
+    if (Math.floor(sqrt) !== sqrt) {
+        return false;
+    }
 
     const boardCol = JSON.parse(JSON.stringify(board));
     let counter = 0;
 
-    let ar1 = [];
-    let ar2 = [];
-    let ar3 = [];
+
     let arrLast = [];
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < board.length; i++) {
+        arrLast.push([]);
+    }
+
+    const fff = (count, item, iter) => {
+        if (count < iter) {
+            arrLast[count].push(item);
+            return;
+        }
+        fff (count+sqrt, item, iter+sqrt);
+    }
+
+    for (let i = 0; i < board.length; i++) {
         let counter2 = 0;
-        if (counter === 3) {
-            arrLast.unshift([...ar1]);
-            arrLast.unshift([...ar2]);
-            arrLast.unshift([...ar3]);
-            ar1 = [];
-            ar2 = [];
-            ar3 = [];
+        if (counter === sqrt) {
+
             counter = 0;
         }
 
-        for (let j = 0; j < 9; j++) {
+        for (let j = 0; j < board.length; j++) {
             boardCol[i].unshift(boardCol[j].pop());
 
             if (counter2 < 3) {
-                ar1.push(board[j][i]);
+
             } else if (counter2 < 6) {
-                ar2.push(board[j][i]);
+                arrLast[counter2].push(board[j][i]);
             } else {
-                ar3.push(board[j][i]);
+                arrLast[counter2].push(board[j][i]);
             }
+
 
             counter2++
         }
