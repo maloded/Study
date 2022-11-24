@@ -11,3 +11,4 @@ console.log(src);
 
 const lines = src.split('\n').filter(line => !!line);
 console.log(lines);
+fs;;affafa
