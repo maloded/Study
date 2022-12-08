@@ -1,0 +1,11 @@
+{
+    "name": "study",
+    "version": "1.0.0",
+    "author": "Alexey Maloded <damatomxxx@gmail.com>",
+    "description": "Example",
+    "license": "MIT",
+    "dependencies": {
+      "ws": "^8.11.0"
+    }
+  }
+  
